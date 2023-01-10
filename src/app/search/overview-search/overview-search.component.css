@@ -1,0 +1,47 @@
+.overview {
+  width: 100%;
+  min-width: 1000px;
+  min-height: 800px;
+  background-color: white;
+  display: block;
+}
+
+.newEntry {
+  font-size: 18px;
+  display:flex;
+  float: left;
+
+}
+.newEntry.button {
+  text-align: center;
+}
+
+.searchTable {
+  font-size: 18px;
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
+  float: left;
+  display:flex;
+  min-width: 400px;
+  align-items: center;
+
+}
+.searchTable.button {
+  text-align: center;
+  position: relative;
+  padding-left: 200px;
+
+}
+.searchTable.form {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+}
+.searchTable.form.input {
+  padding-block-end: 30px;
+  padding-block-start: 30px;
+  padding-inline-end: 50px;
+  text-indent: 40px;
+
+
+}

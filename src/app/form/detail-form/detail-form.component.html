@@ -1,0 +1,49 @@
+
+<div class="formTable">
+  <form>
+    <fieldset>
+      <legend>Antragsteller:</legend>
+    <label for="lname">Name:</label> <input type="text" id="lname" name="lname" size="50" required><br>
+    <label for="fname">Vorname:</label> <input type="text" id="fname" name="fname" required><br>
+    <br>
+    <label for="email">Email:</label> <input type="text" id="email" name="email"><br>
+    <label for="studId">Matrikel-Nr.:</label> <input type="text" id="studId" name="studId" required><br>
+    <label for="subject">Studienfach:</label>
+    <select id="subject" name="subject" required>
+      <option value="blanc">Bitte auswählen</option>
+      <option value="applInf">Angewandte Informatik</option>
+      <option valie="IET">Informations- und Elektrotechnik</option>
+      <option value="mechat">Mechatronik</option>
+      <option value="other">Anderes</option>
+    </select><br>
+    <label for="other">Anderes Fach: </label><input type="text" id="other" name="other"><br>
+    <label for="date">Datum:</label> <input type="date" id="date" name="date" required><br>
+  </fieldset>
+    <br>
+    <fieldset>
+    <legend>Heimatanschrift:</legend>
+    <label for="hastreet">Straße und Hausnummer:</label> <input type="text" id="hastreet" name="hastreet" style="width:200px" size="100"><br>
+    <label for="hazip">Postleitzahl:</label> <input type="text" id="hazip" name="hazip" size="5" style="width:60px">
+    <label for="hatown">  Stadt:</label> <input type="text" id="hatown" name="hatown"><br>
+    <label for="phone">Telefonnummer:</label> <input type="text" id="phone" name="phone"><br>
+    </fieldset>
+    <br>
+    <fieldset>
+    <legend>Praktisches Semester:</legend>
+    <label for="startDate">Vom:</label> <input type="date" id="startDate" name="startDate" required>
+    <label for="endDate"> Bis:</label> <input type="date" id="endDate" name="endDate" required><br>
+    <br>
+    <label for="company">Bei der Firma:</label> <input type="text" id="company" name="company" required><br>
+    <label for="companyAddress">Firmensitz:</label> <input type="text" name="companyAddress" style="width:300px" size="400" required><br>
+    <label for="compArea">In:</label> <input type="text" id="compArea" name="compArea" required><br>
+    <label for="compTopic">Themenstellung:</label> <input type="text" id="compTopic" name="compTopic" required><br>
+  </fieldset>
+    <br>
+    <label for="supervisor">Hochschulbetreuuer:</label> <input type="text" id="supervisor" name="supervisor" required><br>
+<br>
+<br>
+<br>
+<input type="submit" value="Speichern">
+<input type="reset" value="Zurücksetzen">
+  </form>
+</div>
