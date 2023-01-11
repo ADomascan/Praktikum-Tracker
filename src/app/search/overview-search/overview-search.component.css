@@ -15,33 +15,22 @@
 .newEntry.button {
   text-align: center;
 }
-
+* {
+  padding: 12px 10px;
+  margin: 8px 0;
+  box-sizing: content-box;
+  text-align: center;
+}
 .searchTable {
   font-size: 18px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
-  float: left;
+  float: center;
   display:flex;
   min-width: 400px;
   align-items: center;
-
 }
 .searchTable.button {
   text-align: center;
   position: relative;
-  padding-left: 200px;
-
-}
-.searchTable.form {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-
-}
-.searchTable.form.input {
-  padding-block-end: 30px;
-  padding-block-start: 30px;
-  padding-inline-end: 50px;
-  text-indent: 40px;
-
-
+  padding: 20px;
 }
