@@ -37,11 +37,45 @@
     <label for="companyAddress">Firmensitz:</label> <input type="text" name="companyAddress" style="width:300px" size="400" required><br>
     <label for="compArea">In:</label> <input type="text" id="compArea" name="compArea" required><br>
     <label for="compTopic">Themenstellung:</label> <input type="text" id="compTopic" name="compTopic" required><br>
+    <label for="supervisor">Hochschulbetreuuer:</label> <input type="text" id="supervisor" name="supervisor" required><br>
   </fieldset>
     <br>
-    <label for="supervisor">Hochschulbetreuuer:</label> <input type="text" id="supervisor" name="supervisor" required><br>
+    <label>Ersten Antrag einreichen</label>
+    <input type="submit" value="Speichern">
+    <input type="reset" value="Zurücksetzen">
+    <br>
+<fieldset>
+  <legend>Antrag auf Verlängerung:</legend>
+  <label for="extensionRequest">Verlängerung gewünscht:</label> <input type="checkbox" id="extensionRequest" name="extensionRequest"><br>
+  <label for="extensionReason">Grund der Verlängerung:</label> <input type="text" id="extensionReason" name="extensionReason" style="width:300px" size="400" ><br>
+  <label for="endDateNew"> Neues Ende:</label> <input type="date" id="endDateNew" name="endDateNew"><br>
+</fieldset>
 <br>
+<fieldset>
+  <legend>Anerkennung:</legend>
+  <label for="credits">Erworbene Credit-Points:</label> <input type="text" id="credits" name="credits"><br>
+  <label for="contractCopy">Kopie des Vertrags liegt vor:</label> <input type="checkbox" id="contractCopy" name="contractCopy"><br>
+  <label for="reportPaper">Praktikumsarbeit liegt vor:</label> <input type="checkbox" id="reportPaper" name="reportPaper"><br>
+  <label for="reportCard">Praktikumszeugnis liegt vor:</label> <input type="checkbox" id="reportCard" name="reportCard"><br>
+  <label for="startDateFact">Angefangen am:</label> <input type="date" id="startDateFact" name="startDateFact">
+  <label for="endDateFact">Beendet am:</label> <input type="date" id="endDateFact" name="endDateFact"><br>
+  <label for="totalWorkDays">Arbeitstage:</label> <input type="text" id="totalWorkDays" name="totalWorkDays"><br>
+</fieldset>
 <br>
+<fieldset>
+  <legend>Verteidigung:</legend>
+  <label for="colloquiumTopic">Themenstellung des Praxisprojekts:</label> <input type="text" id="colloquiumTopic" name="colloquiumTopic" style="width:300px" size="400"><br>
+  <label for="colloquiumGrade">Note:</label> <input type="text" id="colloquiumGrade" name="colloquiumGrade"><br>
+  <label for="colloquiumDate"> Datum der Verteidigung:</label> <input type="date" id="colloquiumDate" name="colloquiumDate"><br>
+  <label for="term">Semester:</label>
+    <select id="term" name="term">
+      <option value="blanc">Bitte auswählen</option>
+      <option value="winter">Wintersemester</option>
+      <option valie="summer">Sommersemester</option>
+    </select>
+    <label for="year">Jahr: </label><input type="text" id="year" name="year"><br>
+  <label for="internshipComplete">Praxissemester abgeschlossen:</label> <input type="checkbox" id="internshipComplete" name="internshipComplete"><br>
+</fieldset>
 <br>
 <input type="submit" value="Speichern">
 <input type="reset" value="Zurücksetzen">
