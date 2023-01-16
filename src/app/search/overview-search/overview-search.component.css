@@ -28,9 +28,21 @@
   display:flex;
   min-width: 400px;
   align-items: center;
+
+}
+
+.searchTable.form {
+  display: inline-grid;
+  column-gap: 20px;
+  row-gap: 5px;
+  grid-template-columns: auto auto;
 }
 .searchTable.button {
   text-align: center;
   position: relative;
   padding: 20px;
 }
+.resultsTable {
+  width: auto;
+}
+

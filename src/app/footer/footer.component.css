@@ -5,8 +5,25 @@
   padding: 10px;
   object-position: bottom;
 }
-p {
+.info.table {
   margin-top: 12px;
   margin-bottom: 24px;
   text-align: center;
+  table-layout: auto auto auto;
+  padding: 20px;
+  column-width: 75%;
+  column-gap: 100px;
+  border-spacing: 30px;
+}
+.info.table.tr, td {
+  height: 30px;
+  width: 100%;
+  column-gap: 50px;
+}
+.logo {
+  height: 150px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 80px;
+  padding-right: 80px;
 }

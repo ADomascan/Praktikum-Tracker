@@ -7,9 +7,11 @@
   padding-bottom: 100px;
 
 }
-.button {
+.route {
+  justify-content: center;
   text-align: center;
-  padding: 50px;
+  padding: 30px;
+  height: 20px;
 }
 
 
