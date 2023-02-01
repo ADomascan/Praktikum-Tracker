@@ -1,36 +1,47 @@
 <div class="overview">
-<!-- <div class="newEntry">
+  <!-- <div class="newEntry">
   <button>Neuer Antrag</button>
 </div> -->
-<br>
-<div class="searchTable">
-  <!-- Suche nach Name, Semester, Studiengang-->
-<form>
-  <label for="lname">Name oder Vorname:</label>
-  <input type="text" id="lname" name="lname">
-  <label for="semester">Semester:</label>
-  <input type="text" id="semester" name="semester">
-  <label for="studiengang">Studiengang:</label>
-  <input type="text" id="studiengang" name="studiengang"><br>
-  <!-- <label for="studId">Matrikel-Nr:</label>
+  <br>
+  <div class="searchTable">
+    <!-- Suche nach Name, Semester, Studiengang-->
+    <form>
+      <label for="lname">Name oder Vorname:</label>
+      <input type="text" id="lname" name="lname">
+      <label for="semester">Semester:</label>
+      <input type="text" id="semester" name="semester">
+      <label for="studiengang">Studiengang:</label>
+      <input type="text" id="studiengang" name="studiengang"><br>
+      <!-- <label for="studId">Matrikel-Nr:</label>
   <input type="text" id="studId" name="studId"><br> -->
-  <button>Suchen</button>
-</form>
-</div>
-<div class="resultsTable">
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Vorname</th>
-    <th>Semester</th>
-    <th>Matrikel-Nr</th>
-    <th>Studiengang</th>
-    <th>Bearbeitungsstatus</th>
-  </tr>
-  <tr>
-    <td></td>
-  </tr>
-</table>
-</div>
+      <button>Suchen</button>
+    </form>
+  </div>
+  <div class="resultsTable">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Vorname</th>
+        <th>Semester</th>
+        <th>Matrikel-Nr</th>
+        <th>Studiengang</th>
+        <th>Bearbeitungsstatus</th>
+        <th>Aktion</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let student of students$ | async">
+          <td>[LName]={{student.lname}}</td>
+          <td>[FName]={{student.fname}}</td>
+          <td>[StudId]={{student.studId}}</td>
+          <td>[Subject]={{student.subject}}</td>
+          <td>[InternshipComplete]={{student.internshipComplete}}</td>
+          <td>
+            <button class="btn btn-primary me-1" [routerLink]="['edit/', student._id]">Bearbeiten</button>
+            <button class="btn btn-primary me-1" [routerLink]="['edit/', student._id]">Ansehen</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>
