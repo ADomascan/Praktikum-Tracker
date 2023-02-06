@@ -2,10 +2,13 @@
 <app-header></app-header>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- Navigationsleiste-->
-<button class="route" routerLink="">Start</button>
-<button class="route" routerLink="/search">Suche</button>
-<button class="route" routerLink="/form">Antrag</button>
-<router-outlet></router-outlet>
+<div class="NavBar">
+  <button class="route" routerLink="">Start</button>
+  <button class="route" routerLink="/search">Suche</button>
+  <button class="route" routerLink="/form">Antrag</button>
+  <button class="route" routerLink="/form/detail-form">Neuer Antrag</button>
+  <router-outlet></router-outlet>
+</div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <app-footer></app-footer>
 <!-- -->

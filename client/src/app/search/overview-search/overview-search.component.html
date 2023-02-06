@@ -18,16 +18,18 @@
     </form>
   </div>
   <div class="resultsTable">
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Vorname</th>
-        <th>Semester</th>
-        <th>Matrikel-Nr</th>
-        <th>Studiengang</th>
-        <th>Bearbeitungsstatus</th>
-        <th>Aktion</th>
-      </tr>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Vorname</th>
+          <th>Semester</th>
+          <th>Matrikel-Nr</th>
+          <th>Studiengang</th>
+          <th>Bearbeitungsstatus</th>
+          <th>Aktion</th>
+        </tr>
+      </thead>
       <tbody>
         <tr *ngFor="let student of students$ | async">
           <td>[LName]={{student.lname}}</td>

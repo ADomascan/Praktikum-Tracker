@@ -1,6 +1,6 @@
 
 <div class="formTable">
-  <form>
+  <form class="studentForm">
     <fieldset class="fields">
       <legend>Antragsteller:</legend>
     <label for="lname">Name:</label> <input type="text" id="lname" name="lname" size="50" required>
@@ -40,6 +40,7 @@
 <br>
     <label>Ersten Antrag einreichen</label>
     <br>
+    <button (ngSubmit)="submitForm()">Speichern</button>
     <input type="submit" value="Speichern">
     <input type="reset" value="Zurücksetzen">
     <br>
