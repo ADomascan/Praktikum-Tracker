@@ -20,7 +20,7 @@ connectToDatabase(MONGO_URI)
        const app = express();
        app.use(cors());
 
-       app.use("/stundents", studentRouter);
+       app.use("/students", studentRouter);
        // start the Express server
        app.listen(5200, () => {
            console.log(`Server running at http://localhost:5200...`);

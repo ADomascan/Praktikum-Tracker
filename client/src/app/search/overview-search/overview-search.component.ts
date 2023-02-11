@@ -17,11 +17,10 @@ import { StudentService } from '../../student.service';
 
 } */
 export class OverviewSearchComponent implements OnInit {
-  @Input() LName:String='';
-  @Input() FName:String ='';
-  @Input() StudId='';
-  @Input() Subject:String='';
-  @Input() InternshipComplete='false';
+  @Input() LName: String = '';
+  @Input() FName: String = '';
+  @Input() StudId = '';
+  @Input() Subject: String = '';
 
   students$: Observable<Student[]> = new Observable();
 

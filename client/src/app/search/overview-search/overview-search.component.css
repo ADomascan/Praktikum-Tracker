@@ -46,3 +46,9 @@
   width: auto;
 }
 
+.route {
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  height: 20px;
+}

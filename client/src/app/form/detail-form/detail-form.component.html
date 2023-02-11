@@ -1,84 +1,82 @@
-
 <div class="formTable">
-  <form class="studentForm">
+  <form class="studentForm" [formGroup]="studentForm" (ngSubmit)="submitForm()">
     <fieldset class="fields">
       <legend>Antragsteller:</legend>
-    <label for="lname">Name:</label> <input type="text" id="lname" name="lname" size="50" required>
-    <label for="fname">Vorname:</label> <input type="text" id="fname" name="fname" required>
-    <label for="email">Email:</label> <input type="text" id="email" name="email">
-    <label for="studId">Matrikel-Nr.:</label> <input type="text" id="studId" name="studId" required>
+    <label for="lname">Name:</label> <input class="form-control" type="text" formControlName="lname" id="lname" name="lname" size="50" required>
+    <label for="fname">Vorname:</label> <input class="form-control" type="text" formControlName="fname" id="fname" name="fname" required>
+    <label for="email">Email:</label> <input class="form-control" type="text" formControlName="email" id="email" name="email">
+    <label for="studId">Matrikel-Nr.:</label> <input class="form-control" type="text" formControlName="studId" id="studId" name="studId" required>
     <label for="subject">Studienfach:</label>
-    <select id="subject" name="subject" required>
+    <select class="form-control" formControlName="subject" id="subject" name="subject" required>
       <option value="blanc">Bitte auswählen</option>
       <option value="applInf">Angewandte Informatik</option>
       <option valie="IET">Informations- und Elektrotechnik</option>
       <option value="mechat">Mechatronik</option>
       <option value="other">Anderes</option>
     </select>
-    <label for="other">Anderes Fach: </label><input type="text" id="other" name="other">
-    <label for="date">Datum:</label> <input type="date" id="date" name="date" required>
+    <label for="other">Anderes Fach: </label><input class="form-control" formControlName="other" type="text" id="other" name="other">
+    <label for="date">Datum:</label> <input class="form-control" formControlName="date" type="date" id="date" name="date" required>
   </fieldset>
     <br>
     <fieldset  class="fields">
     <legend>Heimatanschrift:</legend>
-    <label for="hastreet">Straße und Hausnummer:</label> <input type="text" id="hastreet" name="hastreet">
-    <label for="hazip">Postleitzahl:</label> <input type="text" id="hazip" name="hazip" size="5" style="width:80px">
-    <label for="hatown">  Stadt:</label> <input type="text" id="hatown" name="hatown">
-    <label for="phone">Telefonnummer:</label> <input type="text" id="phone" name="phone">
+    <label for="hastreet">Straße und Hausnummer:</label> <input class="form-control" type="text" formControlName="hastreet" id="hastreet" name="hastreet">
+    <label for="hazip">Postleitzahl:</label> <input class="form-control" type="text" formControlName="hazip" id="hazip" name="hazip" size="5" style="width:80px">
+    <label for="hatown">  Stadt:</label> <input class="form-control" type="text" formControlName="hatown" id="hatown" name="hatown">
+    <label for="phone">Telefonnummer:</label> <input class="form-control" type="text" formControlName="phone" id="phone" name="phone">
     </fieldset>
     <br>
     <fieldset  class="fields">
     <legend>Praktisches Semester:</legend>
-    <label for="startDate">Vom:</label> <input type="date" id="startDate" name="startDate" required>
-    <label for="endDate"> Bis:</label> <input type="date" id="endDate" name="endDate" required>
-    <label for="company">Bei der Firma:</label> <input type="text" id="company" name="company" required>
-    <label for="companyAddress">Firmensitz:</label> <input type="text" name="companyAddress" required>
-    <label for="compArea">In:</label> <input type="text" id="compArea" name="compArea" required>
-    <label for="compTopic">Themenstellung:</label> <input type="text" id="compTopic" name="compTopic" required>
-    <label for="supervisor">Hochschulbetreuuer:</label> <input type="text" id="supervisor" name="supervisor" required>
+    <label for="startDate">Vom:</label> <input class="form-control" type="date" formControlName="startDate" id="startDate" name="startDate" required>
+    <label for="endDate"> Bis:</label> <input class="form-control" type="date" formControlName="endDate" id="endDate" name="endDate" required>
+    <label for="company">Bei der Firma:</label> <input class="form-control" type="text" formControlName="company" id="company" name="company" required>
+    <label for="companyAddress">Firmensitz:</label> <input class="form-control" type="text" formControlName="companyAddress" name="companyAddress" required>
+    <label for="compArea">In:</label> <input class="form-control" type="text" formControlName="compArea" id="compArea" name="compArea" required>
+    <label for="compTopic">Themenstellung:</label> <input class="form-control" type="text" formControlName="compTopic" id="compTopic" name="compTopic" required>
+    <label for="supervisor">Hochschulbetreuuer:</label> <input class="form-control" type="text" formControlName="supervisor" id="supervisor" name="supervisor" required>
   </fieldset>
 <br>
     <label>Ersten Antrag einreichen</label>
     <br>
-    <button (ngSubmit)="submitForm()">Speichern</button>
-    <input type="submit" value="Speichern">
-    <input type="reset" value="Zurücksetzen">
+    <!-- <button (ngSubmit)="submitForm()">Speichern</button> -->
+    <button type="submit" [disabled]="studentForm.invalid">Speichern</button>
     <br>
 <fieldset  class="fields">
   <legend>Antrag auf Verlängerung:</legend>
-  <label for="extensionRequest">Verlängerung gewünscht:</label> <input type="checkbox" id="extensionRequest" name="extensionRequest">
-  <label for="extensionReason">Grund der Verlängerung:</label> <input type="text" id="extensionReason" name="extensionReason" >
-  <label for="endDateNew"> Neues Ende:</label> <input type="date" id="endDateNew" name="endDateNew">
+  <label for="extensionRequest">Verlängerung gewünscht:</label> <input class="form-control" type="checkbox" formControlName="extensionRequest" id="extensionRequest" name="extensionRequest">
+  <label for="extensionReason">Grund der Verlängerung:</label> <input class="form-control" type="text" formControlName="extensionReason" id="extensionReason" name="extensionReason" >
+  <label for="endDateNew"> Neues Ende:</label> <input class="form-control" type="date" formControlName="endDateNew" id="endDateNew" name="endDateNew">
 </fieldset>
 <br>
 <fieldset  class="fields">
   <legend>Anerkennung:</legend>
-  <label for="credits">Erworbene Credit-Points:</label> <input type="text" id="credits" name="credits">
-  <label for="contractCopy">Kopie des Vertrags liegt vor:</label> <input type="checkbox" id="contractCopy" name="contractCopy">
-  <label for="reportPaper">Praktikumsarbeit liegt vor:</label> <input type="checkbox" id="reportPaper" name="reportPaper">
-  <label for="reportCard">Praktikumszeugnis liegt vor:</label> <input type="checkbox" id="reportCard" name="reportCard">
-  <label for="startDateFact">Angefangen am:</label> <input type="date" id="startDateFact" name="startDateFact">
-  <label for="endDateFact">Beendet am:</label> <input type="date" id="endDateFact" name="endDateFact">
-  <label for="totalWorkDays">Arbeitstage:</label> <input type="text" id="totalWorkDays" name="totalWorkDays">
+  <label for="credits">Erworbene Credit-Points:</label> <input class="form-control" type="text" formControlName="credits" id="credits" name="credits">
+  <label for="contractCopy">Kopie des Vertrags liegt vor:</label> <input class="form-control" type="checkbox" formControlName="contractCopy" id="contractCopy" name="contractCopy">
+  <label for="reportPaper">Praktikumsarbeit liegt vor:</label> <input class="form-control" type="checkbox" formControlName="reportPaper" id="reportPaper" name="reportPaper">
+  <label for="reportCard">Praktikumszeugnis liegt vor:</label> <input class="form-control" type="checkbox" formControlName="reportCard" id="reportCard" name="reportCard">
+  <label for="startDateFact">Angefangen am:</label> <input class="form-control" type="date" formControlName="startDateFact" id="startDateFact" name="startDateFact">
+  <label for="endDateFact">Beendet am:</label> <input class="form-control" type="date" formControlName="endDateFact" id="endDateFact" name="endDateFact">
+  <label for="totalWorkDays">Arbeitstage:</label> <input class="form-control" type="text" formControlName="totalWorkDays" id="totalWorkDays" name="totalWorkDays">
 </fieldset>
 <br>
 <fieldset  class="fields">
   <legend>Verteidigung:</legend>
-  <label for="colloquiumTopic">Themenstellung des Praxisprojekts:</label> <input type="text" id="colloquiumTopic" name="colloquiumTopic">
-  <label for="colloquiumGrade">Note:</label> <input type="text" id="colloquiumGrade" name="colloquiumGrade">
-  <label for="colloquiumDate"> Datum der Verteidigung:</label> <input type="date" id="colloquiumDate" name="colloquiumDate">
+  <label for="colloquiumTopic">Themenstellung des Praxisprojekts:</label> <input class="form-control" type="text" formControlName="colloquiumTopic" id="colloquiumTopic" name="colloquiumTopic">
+  <label for="colloquiumGrade">Note:</label> <input class="form-control" type="text" formControlName="colloquiumGrade" id="colloquiumGrade" name="colloquiumGrade">
+  <label for="colloquiumDate"> Datum der Verteidigung:</label> <input class="form-control" type="date" formControlName="colloquiumDate" id="colloquiumDate" name="colloquiumDate">
   <label for="term">Semester:</label>
-    <select id="term" name="term">
+    <select class="form-control" id="term" formControlName="term" name="term">
       <option value="blanc">Bitte auswählen</option>
       <option value="winter">Wintersemester</option>
       <option valie="summer">Sommersemester</option>
     </select>
-    <label for="year">Jahr: </label><input type="text" id="year" name="year">
-  <label for="internshipComplete">Praxissemester abgeschlossen:</label> <input type="checkbox" id="internshipComplete" name="internshipComplete">
+    <label for="year">Jahr: </label><input class="form-control" type="text" formControlName="year" id="year" name="year">
+  <label for="internshipComplete">Praxissemester abgeschlossen:</label> <input class="form-control" type="checkbox" formControlName="internshipComplete" id="internshipComplete" name="internshipComplete">
 </fieldset>
 <br>
-<input type="submit" value="Speichern">
-<input type="reset" value="Zurücksetzen">
+<!-- <button (ngSubmit)="submitForm()">Speichern</button> -->
+<button type="submit" [disabled]="studentForm.invalid">Speichern</button>
 <br>
   </form>
 </div>

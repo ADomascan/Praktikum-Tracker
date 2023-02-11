@@ -34,7 +34,7 @@ studentRouter.get("/:id", async (req, res) => {
         }
 
     } catch (error) {
-        res.status(404).send(`Failed to find a stundent: ID ${req?.params?.id}`);
+        res.status(404).send(`Failed to find a student: ID ${req?.params?.id}`);
     }
  });
 
@@ -47,7 +47,7 @@ studentRouter.get("/:id", async (req, res) => {
         if (result.acknowledged) {
             res.status(201).send(`Created a new student: ID ${result.insertedId}.`);
         } else {
-            res.status(500).send("Failed to create a new stunent.");
+            res.status(500).send("Failed to create a new student.");
         }
     } catch (error) {
         console.error(error);

@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: '', component: SearchComponent},
   { path: 'search', component:SearchComponent},
   { path: 'form', component: FormComponent},
-  { path: 'form/detail-form', component: DetailFormComponent},
+  {path: 'students', component: SearchComponent},
+  /* { path: 'form/detail-form', component: DetailFormComponent}, */
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];

@@ -38,8 +38,8 @@
           <td>[Subject]={{student.subject}}</td>
           <td>[InternshipComplete]={{student.internshipComplete}}</td>
           <td>
-            <button class="btn btn-primary me-1" [routerLink]="['edit/', student._id]">Bearbeiten</button>
-            <button class="btn btn-primary me-1" [routerLink]="['edit/', student._id]">Ansehen</button>
+            <button class="route" [routerLink]="['edit/', student._id]">Bearbeiten</button>
+            <button class="route" [routerLink]="['edit/', student._id]">Ansehen</button>
           </td>
         </tr>
       </tbody>

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Student } from 'src/app/student';
-import { StudentService } from 'src/app/student.service';
+import { Student } from '../student'
+import { StudentService } from '../student.service'
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent /* implements OnInit */ {
 
   constructor(
     private router: Router,
@@ -27,7 +27,7 @@ export class FormComponent implements OnInit {
         }
       });
   }
-  ngOnInit(): void {
-  }
+/*   ngOnInit(): void {
+  } */
 
 }
