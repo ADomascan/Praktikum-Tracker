@@ -22,14 +22,14 @@ export interface Student {
   compTopic: string;
   supervisor: string;
   // internship extention
-  extensionRequest: boolean;
+  extensionRequest: string;
   extensionReason: string;
   endDateNew: Date;
   // credits
   credits: number;
-  contractCopy: boolean;
-  reportPaper: boolean;
-  reportCard: boolean;
+  contractCopy: string;
+  reportPaper: string;
+  reportCard: string;
   startDateFact: Date;
   endDateFact: Date;
   totalWorkDays: number;
@@ -39,6 +39,6 @@ export interface Student {
   colloquiumDate: Date;
   term: "blanc" | "winter" | "summer";
   year: number;
-  internshipComplete:boolean;
+  internshipComplete:string;
    _id?: mongodb.ObjectId;
 }

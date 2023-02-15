@@ -101,7 +101,7 @@ async function applySchemaValidation(db: mongodb.Db) {
         },
         // internship extention
         extensionRequest: {
-          bsonType: "bool",
+          bsonType: "string",
         },
         extensionReason: {
           bsonType: "string",
@@ -114,13 +114,13 @@ async function applySchemaValidation(db: mongodb.Db) {
           bsonType: "decimal",
         },
         contractCopy: {
-          bsonType: "bool",
+          bsonType: "string",
         },
         reportPaper: {
-          bsonType: "bool",
+          bsonType: "string",
         },
         reportCard: {
-          bsonType: "bool",
+          bsonType: "string",
         },
         startDateFact: {
           bsonType: "date",
@@ -149,8 +149,8 @@ async function applySchemaValidation(db: mongodb.Db) {
           bsonType: "long",
         },
         internshipComplete: {
-          bsonType: "bool",
-          description: "'internshipComplete' is required and is a boolean",
+          bsonType: "string",
+          description: "'internshipComplete' is a boolean",
         },
       },
     },

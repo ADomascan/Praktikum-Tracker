@@ -64,6 +64,7 @@ export class DetailFormComponent implements OnInit {
   get colloquiumDate() { return this.studentForm.get('colloquiumDate'); }
   get term() { return this.studentForm.get('term'); }
   get year() { return this.studentForm.get('year'); }
+  /* get internshipComplete() { return this.studentForm.get('internshipComplete'); } */
   get internshipComplete() { return this.studentForm.get('internshipComplete'); }
 
   ngOnInit() {
@@ -112,10 +113,13 @@ export class DetailFormComponent implements OnInit {
     });
 
     this.studentForm.valueChanges.subscribe((val) => { this.formValuesChanged.emit(val); });
+
   }
 
   submitForm() {
+    console.log(this.studentForm.value);
     this.formSubmitted.emit(this.studentForm.value);
+
   }
 
 }
