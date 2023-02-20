@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { Student } from 'src/app/student';
+import { Student } from '../../student';
 
 @Component({
   selector: 'app-detail-form',
@@ -64,7 +64,6 @@ export class DetailFormComponent implements OnInit {
   get colloquiumDate() { return this.studentForm.get('colloquiumDate'); }
   get term() { return this.studentForm.get('term'); }
   get year() { return this.studentForm.get('year'); }
-  /* get internshipComplete() { return this.studentForm.get('internshipComplete'); } */
   get internshipComplete() { return this.studentForm.get('internshipComplete'); }
 
   ngOnInit() {
@@ -74,7 +73,7 @@ export class DetailFormComponent implements OnInit {
         fname: [student.fname, [Validators.required]],
         email: [ student.email, [Validators.required]],
         studId: [student.studId, [Validators.required]],
-        subject: [ student.studId, [Validators.required]],
+        subject: [ student.subject, [Validators.required]],
         other: [student.other],
         date: [student.date, [Validators.required]],
         // home address

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject, tap } from 'rxjs';
 import { Student } from './student';
 
@@ -29,7 +29,8 @@ export class StudentService {
   }
 
   createStudent(student: Student): Observable<string> {
-    return this.httpClient.post(`${this.url}/students`, student, { responseType: 'text' });
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.httpClient.post(`${this.url}/students`, student, { responseType: 'text' , headers:headers});
   }
 
   updateStudent(id: string, student: Student): Observable<string> {

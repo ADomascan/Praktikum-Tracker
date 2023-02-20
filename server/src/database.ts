@@ -22,7 +22,7 @@ async function applySchemaValidation(db: mongodb.Db) {
   const jsonSchema = {
     $jsonSchema: {
       bsonType: "object",
-      required: ["lname", "fname", "email", "studId", "subject", "date", "startDate", "endDate", "company", "companyAddress", "compArea", "compTopic", "supervisor"],
+      /* required: ["lname", "fname", "email", "studId", "subject", "date", "startDate", "endDate", "company", "companyAddress", "compArea", "compTopic", "supervisor"], */
       additionalProperties: true,
       properties: {
         _id: {},
@@ -30,7 +30,7 @@ async function applySchemaValidation(db: mongodb.Db) {
           bsonType: "string",
           description: "'last name' is required and is a string",
         },
-        fname: {
+       /*  fname: {
           bsonType: "string",
           description: "'first name' is required and is a string",
         },
@@ -64,9 +64,11 @@ async function applySchemaValidation(db: mongodb.Db) {
         },
         hatown: {
           bsonType: "string",
+          desciption:"hatown is the town or city of the home address",
         },
         phone: {
           bsonType: "long",
+          descrption:"phone is the phone number of the student",
         },
         //Internship
         startDate: {
@@ -101,57 +103,72 @@ async function applySchemaValidation(db: mongodb.Db) {
         },
         // internship extention
         extensionRequest: {
-          bsonType: "string",
+          bsonType: "bool",
+          descrption:"extensionRequest is a optional field if an extension is requested",
         },
         extensionReason: {
           bsonType: "string",
+          description:"extensionReason is the justification of the extension",
         },
         endDateNew: {
           bsonType: "date",
+          description:"endDateNew is the new defined end date of the internship",
         },
         // credits
         credits: {
           bsonType: "decimal",
+          descrption:"credits is the amount of ECTS assigned to the internship",
         },
         contractCopy: {
-          bsonType: "string",
+          bsonType: "bool",
+          descrption:"contractCopy marks the submitted copy of the contract between student and the company, value true or false",
         },
         reportPaper: {
-          bsonType: "string",
+          bsonType: "bool",
+          descrption:"reportPaper marks the submitted report paper about the internship, value true or false",
         },
         reportCard: {
-          bsonType: "string",
+          bsonType: "bool",
+          descrption:"reportCard marks the submitted certificate about the intership, value true or false",
         },
         startDateFact: {
           bsonType: "date",
+          descrption:"startDateFact is the factual start date of the internship, might deviate from original request",
         },
         endDateFact: {
           bsonType: "date",
+          descrption:"endDateFact is the factual end date of the internship, might deviate from original request or have been extended via the extension request",
         },
         totalWorkDays: {
           bsonType: "decimal",
+          descrption:"totalWorkDays is the amout of days worked on the internship",
         },
         // colloquium
         colloquiumTopic: {
           bsonType: "string",
+          descrption:"colloquimTopic is the topic of the oral exam on the internship",
         },
         colloquiumGrade: {
           bsonType: "decimal",
+          descrption:"colloquimGrade is the grade for the completed internship",
         },
         colloquiumDate: {
           bsonType: "date",
+          descrption:"colloquilDate is the date of the oral exam",
         },
         term: {
           bsonType: "string",
           enum: ["blanc", "winter", "summer"],
+          descrption:"term descibes winter or summer term of the intership",
         },
         year: {
-          bsonType: "long",
+          bsonType: "int",
+          descrption:"year is the year of the internship",
         },
         internshipComplete: {
-          bsonType: "string",
-          description: "'internshipComplete' is a boolean",
-        },
+          bsonType: "bool",
+          description: "'internshipComplete' is a boolean and marks the completion of the process",
+        }, */
       },
     },
   };
@@ -159,10 +176,11 @@ async function applySchemaValidation(db: mongodb.Db) {
   // Try applying the modification to the collection, if the collection doesn't exist, create it
   await db.command({
     collMod: "Praktikum_Tracker",
-    validator: jsonSchema
+    validator: jsonSchema,
   }).catch(async (error: mongodb.MongoServerError) => {
     if (error.codeName === 'NamespaceNotFound') {
       await db.createCollection("Praktikum_Tracker", { validator: jsonSchema });
     }
+    console.log(error.errInfo)
   });
 }

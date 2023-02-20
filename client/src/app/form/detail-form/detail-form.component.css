@@ -1,4 +1,4 @@
-.formTable {
+.studentForm {
   font-size: 18px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
   background-color: white;
@@ -10,7 +10,7 @@
   column-gap: 50px;
 }
 
-.formTable.form.button {
+.studentForm.form.button {
   display: flex;
   text-align: center;
   }

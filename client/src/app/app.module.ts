@@ -10,6 +10,7 @@ import { OverviewSearchComponent } from './search/overview-search/overview-searc
 import { DetailFormComponent } from './form/detail-form/detail-form.component';
 import { FormComponent } from './form/form.component';
 import { SearchComponent } from './search/search.component';
+import { EditStudentComponent } from './form/edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchComponent } from './search/search.component';
     OverviewSearchComponent,
     SearchComponent,
     DetailFormComponent,
-    FormComponent
+    FormComponent,
+    EditStudentComponent,
   ],
   imports: [
     BrowserModule,

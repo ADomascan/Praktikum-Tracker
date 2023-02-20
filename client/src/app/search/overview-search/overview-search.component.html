@@ -32,11 +32,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let student of students$ | async">
-          <td>[LName]={{student.lname}}</td>
-          <td>[FName]={{student.fname}}</td>
-          <td>[StudId]={{student.studId}}</td>
-          <td>[Subject]={{student.subject}}</td>
-          <td>[InternshipComplete]={{student.internshipComplete}}</td>
+          <td>{{student.lname}}</td>
+          <td>{{student.fname}}</td>
+          <td>{{student.term}}</td>
+          <td>{{student.studId}}</td>
+          <td *ngIfElse="Other else Subject">
+            <ng-template #other>{{student.other}}</ng-template>
+            <ng-template #subject>{{student.subject}}</ng-template></td>
+          <td>{{student.internshipComplete}}</td>
           <td>
             <button class="route" [routerLink]="['edit/', student._id]">Bearbeiten</button>
             <button class="route" [routerLink]="['edit/', student._id]">Ansehen</button>

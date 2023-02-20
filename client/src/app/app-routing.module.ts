@@ -3,13 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailFormComponent } from './form/detail-form/detail-form.component';
 import { FormComponent } from './form/form.component';
 import { SearchComponent } from './search/search.component';
+import { EditStudentComponent } from './form/edit-student/edit-student.component';
 
 const routes: Routes = [
-  { path: '', component: SearchComponent},
-  { path: 'search', component:SearchComponent},
-  { path: 'form', component: FormComponent},
-  {path: 'students', component: SearchComponent},
-  /* { path: 'form/detail-form', component: DetailFormComponent}, */
+  { path: '', component: SearchComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'form', component: FormComponent },
+  { path: 'form/detail-form', component: DetailFormComponent },
+  { path: 'edit/:id', component: EditStudentComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];
