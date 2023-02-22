@@ -5,8 +5,8 @@
   <br>
   <div class="searchTable">
     <!-- Suche nach Name, Semester, Studiengang-->
-    <form>
-      <label for="lname">Name oder Vorname:</label>
+    <form class="searchForm" [formGroup]="searchForm" (ngSubmit)="searchStudents()">
+      <label for="lname">Name</label>
       <input type="text" id="lname" name="lname">
       <label for="semester">Semester:</label>
       <input type="text" id="semester" name="semester">
@@ -14,7 +14,7 @@
       <input type="text" id="studiengang" name="studiengang"><br>
       <!-- <label for="studId">Matrikel-Nr:</label>
   <input type="text" id="studId" name="studId"><br> -->
-      <button>Suchen</button>
+      <button type="submit">Suchen</button>
     </form>
   </div>
   <div class="resultsTable">
@@ -34,11 +34,9 @@
         <tr *ngFor="let student of students$ | async">
           <td>{{student.lname}}</td>
           <td>{{student.fname}}</td>
-          <td>{{student.term}}</td>
+          <td>{{student.term}} {{student.year}}</td>
           <td>{{student.studId}}</td>
-          <td *ngIfElse="Other else Subject">
-            <ng-template #other>{{student.other}}</ng-template>
-            <ng-template #subject>{{student.subject}}</ng-template></td>
+          <td >{{student.subject}}</td>
           <td>{{student.internshipComplete}}</td>
           <td>
             <button class="route" [routerLink]="['edit/', student._id]">Bearbeiten</button>

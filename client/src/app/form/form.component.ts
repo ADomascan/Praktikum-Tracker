@@ -29,6 +29,11 @@ export class FormComponent {
         }
       });
   }
+  /* returnToSearch() {
+    next: () => {
+      this.router.navigate(['/search']);
+    };
+  } */
 /*   ngOnInit(): void {
   } */
 

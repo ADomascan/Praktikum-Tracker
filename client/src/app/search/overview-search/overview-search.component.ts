@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Number } from 'mongoose';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { Student } from '../../student';
 import { StudentService } from '../../student.service';
@@ -17,10 +19,15 @@ import { StudentService } from '../../student.service';
 
 } */
 export class OverviewSearchComponent implements OnInit {
-  @Input() LName: String = '';
-  @Input() FName: String = '';
-  @Input() StudId = '';
-  @Input() Subject: String = '';
+  @Input()
+  initialState: BehaviorSubject<Student> = new BehaviorSubject({} as Student);
+
+  @Output()
+  formValuesChanged = new EventEmitter<Student>();
+
+  @Output()
+  formSubmitted = new EventEmitter<Student>();
+  searchForm: FormGroup =new FormGroup({});
 
   students$: Observable<Student[]> = new Observable();
 
@@ -39,5 +46,17 @@ export class OverviewSearchComponent implements OnInit {
   private fetchStudents(): void {
     this.students$ = this.studentService.getStudents();
   }
+  public displayTerm(term: string) {
+    if (term = 'winter') {
+      term = "Wintersemester"
+    }
+    else if (term = 'summer') {
+      term = "Sommersemester"
+    }
+    else { term = '' };
+    return term;
+  }
 
+  public searchStudents(){}
 }
+

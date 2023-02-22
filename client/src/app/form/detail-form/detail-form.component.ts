@@ -9,10 +9,6 @@ import { Student } from '../../student';
   styleUrls: ['./detail-form.component.css']
 })
 export class DetailFormComponent implements OnInit {
-  /*  constructor(
-    ) { }
-    ngOnInit(): void {
-    } */
   @Input()
   initialState: BehaviorSubject<Student> = new BehaviorSubject({} as Student);
 
