@@ -1,6 +1,10 @@
 // Node installieren
 // offizielle Versionen https://nodejs.org/en/download/
 
+// Angular installieren
+// Anleitung https://angular.io/guide/setup-local
+npm install -g @angular/cli
+
 // MongoDB installieren
 // Offizielle Anleitung unter https://www.mongodb.com/docs/manual/administration/install-community/
 // für Windows https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/
