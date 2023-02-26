@@ -28,3 +28,5 @@ aus dem 'client'-Verzeichnis kann mit
   ng serve
 das Frontend gestartet werden.
   mit Option -o auch direkt der Browser dazu.
+
+Seite ist erreichbar unter http://localhost:4200
