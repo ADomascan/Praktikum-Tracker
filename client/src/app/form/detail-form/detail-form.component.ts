@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { Student } from '../../student';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-detail-form',
@@ -17,10 +18,12 @@ export class DetailFormComponent implements OnInit {
 
   @Output()
   formSubmitted = new EventEmitter<Student>();
+  homeSubmitted = new EventEmitter();
 
   studentForm: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private location: Location,
+    private fb: FormBuilder) { }
   // header fields
   get lname() { return this.studentForm.get('lname'); }
   get fname() { return this.studentForm.get('fname'); }
@@ -116,5 +119,9 @@ export class DetailFormComponent implements OnInit {
     this.formSubmitted.emit(this.studentForm.value);
 
   }
+  navigateHome() {
+    this.location.back();
+    };
+  }
 
-}
+

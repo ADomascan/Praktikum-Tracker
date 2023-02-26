@@ -30,14 +30,21 @@ export class StudentService {
 
   createStudent(student: Student): Observable<string> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.httpClient.post(`${this.url}/students`, student, { responseType: 'text' , headers:headers});
+    return this.httpClient.post(`${this.url}/students`, student, { responseType: 'text', headers: headers });
   }
 
   updateStudent(id: string, student: Student): Observable<string> {
     return this.httpClient.put(`${this.url}/students/${id}`, student, { responseType: 'text' });
   }
 
- /*  deleteStudent(id: string): Observable<string> {
-    return this.httpClient.delete(`${this.url}/students/${id}`, { responseType: 'text' });
-  } */
+  getStudentsFilter(filter: Student) {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    this.httpClient.get<Student[]>(`${this.url}/find/${filter}`, { headers: headers })
+     .subscribe(students => {
+        this.students$.next(students);
+      });
+      console.log(this.students$);
+    return this.students$;
+  }
+
 }

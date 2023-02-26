@@ -3,6 +3,42 @@
 <h2>Anträge suchen</h2>
 </div>
 <!-- Seite Suche, Verweist overview-Search-->
+<div class="search">
 <div class="flexrow">
-  <app-overview-search></app-overview-search>
+  <app-overview-search (formSubmitted)="findStudents($event)"></app-overview-search>
+<br>
+</div>
+  <div class="resultsTable">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Vorname</th>
+          <th>Semester</th>
+          <th>Jahr</th>
+          <th>Matrikel-Nr</th>
+          <th>Studiengang</th>
+          <th>Bearbeitungsstatus</th>
+          <th>Aktion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students$ | async">
+          <td>{{student.lname}}</td>
+          <td>{{student.fname}}</td>
+          <!-- <td>{{student.term}}</td> -->
+          <td onload="displayTerm(student.term);">{{student.term}}</td>
+          <td>{{student.year}}</td>
+          <td>{{student.studId}}</td>
+          <td >{{student.subject}}</td>
+          <td>{{student.internshipComplete}}</td>
+          <td>
+            <button class="route" [routerLink]="['edit/', student._id]" [disabled]="((student.internshipComplete) == true)? true:false">Bearbeiten</button>
+            <button class="route" [routerLink]="['view/', student._id]">Ansehen</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>

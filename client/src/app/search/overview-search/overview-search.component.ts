@@ -2,9 +2,8 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Number } from 'mongoose';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { Observable } from 'rxjs';
 import { Student } from '../../student';
-import { StudentService } from '../../student.service';
+
 @Component({
   selector: 'app-overview-search',
   templateUrl: './overview-search.component.html',
@@ -27,36 +26,32 @@ export class OverviewSearchComponent implements OnInit {
 
   @Output()
   formSubmitted = new EventEmitter<Student>();
-  searchForm: FormGroup =new FormGroup({});
 
-  students$: Observable<Student[]> = new Observable();
+  searchForm: FormGroup = new FormGroup({});
 
-  constructor(private studentService: StudentService) { }
+  constructor(private sf: FormBuilder) { }
+  get lname() { return this.searchForm.get('lname'); }
+  get term() { return this.searchForm.get('term'); }
+  get year() { return this.searchForm.get('year'); }
+  get subject() { return this.searchForm.get('subject'); }
 
-  ngOnInit(): void {
-    this.fetchStudents();
-  }
 
-  /* deleteEmployee(id: string): void {
-    this.studentsService.deleteEmployee(id).subscribe({
-      next: () => this.fetchEmployees()
+  ngOnInit() {
+    this.initialState.subscribe(student => {
+      this.searchForm = this.sf.group({
+        lname: [student.lname],
+        term: [student.term],
+        year: [student.year],
+        subject: [student.subject]
+      });
     });
-  } */
-
-  private fetchStudents(): void {
-    this.students$ = this.studentService.getStudents();
-  }
-  public displayTerm(term: string) {
-    if (term = 'winter') {
-      term = "Wintersemester"
-    }
-    else if (term = 'summer') {
-      term = "Sommersemester"
-    }
-    else { term = '' };
-    return term;
+    this.searchForm.valueChanges.subscribe((val) => { this.formValuesChanged.emit(val); });
   }
 
-  public searchStudents(){}
+  searchStudents() {
+    // lname: string, term: string, year: Number, subject: string
+    console.log(this.searchForm.value);
+    this.formSubmitted.emit(this.searchForm.value);
+
+  }
 }
-

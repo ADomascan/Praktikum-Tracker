@@ -4,6 +4,7 @@
   background-color: white;
   display: flex;
   min-width: 600px;
+  width:100%;
   align-items: center;
   display: table;
   table-layout: auto;

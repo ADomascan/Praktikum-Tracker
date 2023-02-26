@@ -11,6 +11,7 @@ import { DetailFormComponent } from './form/detail-form/detail-form.component';
 import { FormComponent } from './form/form.component';
 import { SearchComponent } from './search/search.component';
 import { EditStudentComponent } from './form/edit-student/edit-student.component';
+import { ViewFormComponent } from './form/view-form/view-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EditStudentComponent } from './form/edit-student/edit-student.component
     DetailFormComponent,
     FormComponent,
     EditStudentComponent,
+    ViewFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,31 @@
+
+.search {
+  width: 100%;
+  min-width: 1000px;
+  min-height: 800px;
+  background-color: white;
+  display: block;
+}
+* {
+  padding: 12px 10px;
+  margin: 8px 0;
+  box-sizing: content-box;
+
+}
+.resultsTable {
+  width: auto;
+
+}
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.route {
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  height: 15px;
+}

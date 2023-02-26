@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterEvent } from '@angular/router';
 import { Student } from '../student'
 import { StudentService } from '../student.service'
 
@@ -17,7 +17,7 @@ export class FormComponent {
   ) { }
 
   addStudent(student: Student) {
-    console.log (this.studentService.createStudent(student))
+    console.log(this.studentService.createStudent(student))
     this.studentService.createStudent(student)
       .subscribe({
         next: () => {
@@ -29,12 +29,5 @@ export class FormComponent {
         }
       });
   }
-  /* returnToSearch() {
-    next: () => {
-      this.router.navigate(['/search']);
-    };
-  } */
-/*   ngOnInit(): void {
-  } */
 
 }
