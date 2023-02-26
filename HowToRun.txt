@@ -1,0 +1,30 @@
+// Node installieren
+// offizielle Versionen https://nodejs.org/en/download/
+
+// MongoDB installieren
+// Offizielle Anleitung unter https://www.mongodb.com/docs/manual/administration/install-community/
+// für Windows https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/
+ 1. Installer laden
+ 2. Installer ausführen
+ 3. Setup vervollständigen
+ server/.env file sieht Localhost:27017 vor mit Instanz "PreisProjekt", die Daten-Collection wird angelegt, falls nicht vorhanden
+
+// mit NPM können weitere Module installiert werden, sind aber bereits unter Server und Client enthalten
+npm install cors dotenv express mongodb
+
+Verzeichnis 'server' enthält Dateien, die die Kommunikation zur Datenbank gestalten.
+Unter
+'server/src'
+Aus dem Verzeichnis 'server' kann mit
+  npx ts-node src/server.ts
+die Express-Server mit Verbindung zur Datenbank gestartet werden.
+
+Verzeichnis 'client' enhält alle Dateien zum Front-End sowie die damit verbundene Logik in TypeScript.
+'client/src/app' enthält Komponenten sowie einzelne Dateien.
+'header' und 'footer' sind konstant und auf jeder Seite eingebunden.
+'form' beschreibt alles zum Antragsformular (anlegen, editieren, lesen), 'search' - alles zur Übersicht.
+
+aus dem 'client'-Verzeichnis kann mit
+  ng serve
+das Frontend gestartet werden.
+  mit Option -o auch direkt der Browser dazu.

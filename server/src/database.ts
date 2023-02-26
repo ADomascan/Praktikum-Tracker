@@ -30,7 +30,7 @@ async function applySchemaValidation(db: mongodb.Db) {
           bsonType: "string",
           description: "'last name' is required and is a string",
         },
-       /*  fname: {
+         fname: {
           bsonType: "string",
           description: "'first name' is required and is a string",
         },
@@ -168,7 +168,7 @@ async function applySchemaValidation(db: mongodb.Db) {
         internshipComplete: {
           bsonType: "bool",
           description: "'internshipComplete' is a boolean and marks the completion of the process",
-        }, */
+        },
       },
     },
   };
