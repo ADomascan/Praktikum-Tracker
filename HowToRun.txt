@@ -11,10 +11,12 @@ npm install -g @angular/cli
  1. Installer laden
  2. Installer ausführen
  3. Setup vervollständigen
- server/.env file sieht Localhost:27017 vor mit Instanz "PreisProjekt", die Daten-Collection wird angelegt, falls nicht vorhanden
+ server/.env file sieht Localhost:27017 vor mit Instanz "PreisProjekt", die Daten-Collection wird angelegt, falls nicht vorhanden.
+ ggf. muss statt localhost die IP 127.0.0.1 verwendet werden
 
 // mit NPM können weitere Module installiert werden, sind aber bereits unter Server und Client enthalten
 npm install cors dotenv express mongodb
+npm install --save-dev typescript @types/cors @types/express @types/node ts-node
 
 Verzeichnis 'server' enthält Dateien, die die Kommunikation zur Datenbank gestalten.
 Unter
